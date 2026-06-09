@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 import CodeEditor from './components/CodeEditor'
 import Button from './components/Button'
 import useDebounce from './Hooks/useDebounce'
 import {saveCode,loadCode} from './utils/db.ts'
-// import {loadCode} from './utils/db.ts'
 function App() {
 
 const [html,setHtml] = useState('')

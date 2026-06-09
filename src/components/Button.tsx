@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 function Button({name,onClick}:{name:string,onClick:any}) {
   return (
