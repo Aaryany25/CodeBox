@@ -4,7 +4,7 @@ import CodeEditor from '../components/CodeEditor'
 import useDebounce from '../Hooks/useDebounce'
 import {saveCode,loadCode} from '../utils/db.ts'
 
-function CodePage() {
+function CodePage({SignOut}:any) {
     const [html,setHtml] = useState('')
     const [css,setCss] = useState('')
     const [js,setJs] = useState('')
@@ -30,9 +30,12 @@ function CodePage() {
     },[])
   return (
    <div className="  w-full h-screen bg-gray-800 overflow-hidden">
-    <div className ="w-full ">
+    <div className="w-full flex justify-end gap-2 p-2">
       <Button name="Save" onClick={SaveToDb}  />
+      <Button name="Sign Out" onClick={SignOut} />
+    </div>
  
+      <div className ="w-full flex justify-end gap-2 p-2">
   <div className="w-full flex gap-2 p-2">
 
           <CodeEditor language="html" value={html} onChange={setHtml} />

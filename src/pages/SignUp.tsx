@@ -1,10 +1,12 @@
-import React from 'react'
 import Button from '../components/Button'
-function SignUp() {
+function SignUp({ SignInWithGoogle }:any) {
   return (
-    <div>
+    
+ <div className="w-full h-screen flex items-center justify-center">
+        <Button name="Sign In With Google" onClick={SignInWithGoogle} />
 
-    </div>
+      </div>
+    
   )
 }
 

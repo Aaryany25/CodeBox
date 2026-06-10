@@ -5,6 +5,7 @@ import Button from './components/Button'
 import {supabase} from "./utils/supabase.ts"
 import CodePage from './pages/CodePage.tsx'
 import type { User } from '@supabase/supabase-js/dist/index.cjs'
+import SignUp from './pages/SignUp.tsx'
 function App() {
 
  const [user, setuser] = useState<User | null>(null);
@@ -41,15 +42,10 @@ const SignOut=async()=>{
   return (
     <>
     {user ? (
-      <>
-      <Button name="Sign Out" onClick={SignOut} />
-       <CodePage  />
-      </>
+       <CodePage SignOut={SignOut} />
+     
     ) : (
-      <div className="w-full h-screen flex items-center justify-center">
-        <Button name="Sign In With Google" onClick={SignInWithGoogle} />
-
-      </div>
+    <SignUp SignInWithGoogle={SignInWithGoogle} />
     )}
    
  
