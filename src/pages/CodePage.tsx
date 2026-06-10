@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from '../components/Button'
 import { useEffect, useState } from 'react'
 import CodeEditor from '../components/CodeEditor'

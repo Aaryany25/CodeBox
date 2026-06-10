@@ -4,9 +4,10 @@ import './App.css'
 import Button from './components/Button'
 import {supabase} from "./utils/supabase.ts"
 import CodePage from './pages/CodePage.tsx'
+import type { User } from '@supabase/supabase-js/dist/index.cjs'
 function App() {
 
- const [user,setuser] = useState(null)
+ const [user, setuser] = useState<User | null>(null);
 useEffect(() => {
   const getUser = async()=>{
     const {data} = await supabase.auth.getUser();
@@ -20,12 +21,10 @@ useEffect(() => {
 }, []);
 
 const SignInWithGoogle=async()=>{
-  const {data,error} = await supabase.auth.signInWithOAuth({
+  const {error} = await supabase.auth.signInWithOAuth({
   provider: 'google',
   })
- if(data){
-  setuser(data.user);
- }
+ 
 
    if (error) {
     console.log(error);
