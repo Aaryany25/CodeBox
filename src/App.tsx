@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 
 import './App.css'
-import Button from './components/Button'
 import {supabase} from "./utils/supabase.ts"
 import CodePage from './pages/CodePage.tsx'
 import type { User } from '@supabase/supabase-js/dist/index.cjs'
 import SignUp from './pages/SignUp.tsx'
+import { Routes ,Route} from 'react-router-dom'
+import Protected from './routes/Protected.tsx'
 function App() {
 
  const [user, setuser] = useState<User | null>(null);
@@ -41,14 +42,17 @@ const SignOut=async()=>{
 }
   return (
     <>
-    {user ? (
+    {/* {user ? (
        <CodePage SignOut={SignOut} />
      
     ) : (
     <SignUp SignInWithGoogle={SignInWithGoogle} />
-    )}
+    )} */}
    
- 
+ <Routes>
+   <Route path="/" element={<SignUp user={user} SignInWithGoogle={SignInWithGoogle} />} />
+    <Route path="/code" element={<Protected user={user}><CodePage SignOut={SignOut} /></Protected>} />
+ </Routes>
     </>
    
   )

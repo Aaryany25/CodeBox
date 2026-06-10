@@ -1,5 +1,13 @@
 import Button from '../components/Button'
-function SignUp({ SignInWithGoogle }:any) {
+import {useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
+function SignUp({user, SignInWithGoogle }:any) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/code");
+    }
+  }, [user]);
   return (
     
  <div className="w-full h-screen flex items-center justify-center">
