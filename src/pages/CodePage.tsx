@@ -28,7 +28,7 @@ function CodePage() {
             console.log("data loaded");
             
           });
-    })
+    },[])
   return (
    <div className="  w-full h-screen bg-gray-800 overflow-hidden">
     <div className ="w-full ">
