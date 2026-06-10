@@ -23,9 +23,7 @@ useEffect(() => {
 const SignInWithGoogle=async()=>{
   const {error} = await supabase.auth.signInWithOAuth({
   provider: 'google',
-   options: {
-    redirectTo: window.location.origin,
-  },
+   
   })
  
 
@@ -33,11 +31,18 @@ const SignInWithGoogle=async()=>{
     console.log(error);
   }
 }
+const SignOut=async()=>{
+  const {error} = await supabase.auth.signOut();
+
+  if (!error) {
+   setuser(null)
+  }
+}
   return (
     <>
     {user ? (
       <>
-      <Button name="Sign Out" onClick={() => supabase.auth.signOut()} />
+      <Button name="Sign Out" onClick={SignOut} />
        <CodePage  />
       </>
     ) : (
