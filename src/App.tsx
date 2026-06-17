@@ -46,7 +46,7 @@ const SignOut=async()=>{
    
    
  <Routes>
-  <Route path="/" element={<Home />} />
+  <Route path="/" element={<Home user={user} SignOut={SignOut} />} />
    <Route path="/signup" element={<SignUp user={user} SignInWithGoogle={SignInWithGoogle} />} />
     <Route path="/code" element={<Protected user={user}><CodePage SignOut={SignOut} /></Protected>} />
  </Routes>
