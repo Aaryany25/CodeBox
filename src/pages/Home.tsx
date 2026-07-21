@@ -48,7 +48,7 @@ function Home({ user, SignOut }: { user?: any; SignOut?: () => void }) {
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#0f1015] text-white overflow-x-hidden font-sans selection:bg-[#47cf73]/30 selection:text-[#47cf73]">
+    <div className="w-full min-h-screen bg-[#0f1014] text-white overflow-x-hidden font-sans selection:bg-[#47cf73]/30 selection:text-[#47cf73]">
       <Navbar user={user} SignOut={SignOut} />
 
       {/* Hero Section */}
@@ -952,4 +952,4 @@ function Home({ user, SignOut }: { user?: any; SignOut?: () => void }) {
   )
 }
 
-export default Home
+export default Home
